@@ -1,18 +1,18 @@
 inherit rubygem
 
 NAME="ruby-vte3"
-VERSION=2.2.5
+VERSION=3.1.1
 RELEASE=1
 CATEGORY="Ruby"
-SUMMARY="Ruby VTE3 bindings"
-DESCRIPTION="Ruby/VTE3 is a Ruby binding of the VTE-2.90 API."
+SUMMARY="Ruby VTE 2.91 bindings"
+DESCRIPTION="Ruby/VTE3 is a Ruby binding of the VTE-2.91 API."
 HOMEPAGE="http://ruby-gnome2.sourceforge.jp/"
 
-PKG_NAMES="${NAME} ${NAME}-devel ${NAME}-doc"
-ruby_vte3_CONTENTS="--exclude=sample ${RUBYGEM_EXTDIR#/} ${RUBYGEM_INSTDIR#/} ${RUBYGEM_SPEC#/}"
-ruby_vte3_devel_REQUIRES="${NAME} ruby-glib2-devel"
-ruby_vte3_devel_CONTENTS="usr/lib/pkgconfig/"
-ruby_vte3_doc_CONTENTS="${RUBYGEM_DOCDIR#/} ${RUBYGEM_INSTDIR#/}/sample/"
-PKG_IGNORE="usr/lib/lib*.a"
+PKG_NAMES="${NAME} ${NAME}-doc"
+ruby_vte3_REQUIRES="girepository-Vte2.91"
+ruby_vte3_OBSOLETES="${NAME}-devel"
+ruby_vte3_CONTENTS=${RUBYGEM_INSTDIR#/}" "${RUBYGEM_SPEC#/}
+ruby_vte3_doc_CONTENTS=${RUBYGEM_DOCDIR#/}
 
-DEPS_PATH="${RUBYGEM_EXTDIR%/*}/glib2-${VERSION}:${RUBYGEM_EXTDIR%/*}/gtk3-${VERSION}"
+# we have to wait until the old archful ones are archived
+#ARCH=noarch
