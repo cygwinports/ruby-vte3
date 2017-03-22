@@ -10,7 +10,7 @@ HOMEPAGE="http://ruby-gnome2.sourceforge.jp/"
 
 PKG_NAMES="${NAME} ${NAME}-doc"
 ruby_vte3_REQUIRES="girepository-Vte2.91"
-ruby_vte3_OBSOLETES="${NAME}-devel"
+ruby_vte3_OBSOLETES="${NAME}-devel ${NAME}-debuginfo"
 ruby_vte3_CONTENTS=${RUBYGEM_INSTDIR#/}" "${RUBYGEM_SPEC#/}
 ruby_vte3_doc_CONTENTS=${RUBYGEM_DOCDIR#/}
 
