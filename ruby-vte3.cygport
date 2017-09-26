@@ -1,7 +1,7 @@
 inherit rubygem
 
 NAME="ruby-vte3"
-VERSION=3.1.1
+VERSION=3.1.8
 RELEASE=1
 CATEGORY="Ruby"
 SUMMARY="Ruby VTE 2.91 bindings"
@@ -11,7 +11,7 @@ HOMEPAGE="http://ruby-gnome2.sourceforge.jp/"
 PKG_NAMES="${NAME} ${NAME}-doc"
 ruby_vte3_REQUIRES="girepository-Vte2.91"
 ruby_vte3_OBSOLETES="${NAME}-devel ${NAME}-debuginfo"
-ruby_vte3_CONTENTS=${RUBYGEM_INSTDIR#/}" "${RUBYGEM_SPEC#/}
+ruby_vte3_CONTENTS="${RUBYGEM_EXTDIR#/} ${RUBYGEM_INSTDIR#/} ${RUBYGEM_SPEC#/}"
 ruby_vte3_doc_CONTENTS=${RUBYGEM_DOCDIR#/}
 
 # we have to wait until the old archful ones are archived
